@@ -1,5 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { Activity, determineActivity } from "../index";
+import Activity from "../types/Activity";
+import { determineActivity } from "../index";
 
 /**
  * The structure of this test array is as follows
