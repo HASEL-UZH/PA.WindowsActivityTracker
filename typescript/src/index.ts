@@ -141,7 +141,7 @@ export const determineActivity = (
 export class WindowsActivityTracker implements ITracker {
   name = "WindowsActivityTracker";
   isRunning = false;
-  ref: NodeJS.Timeout | undefined;
+  private ref: NodeJS.Timeout | undefined;
 
   onWindowChange: (activeWind: ActiveWindow) => void;
   checkingForWindowChangeInterval: number;
@@ -166,8 +166,6 @@ export class WindowsActivityTracker implements ITracker {
       console.log(`${this.name} is already running!`);
       return;
     }
-
-    console.log(`starting, ${this.name}}`);
 
     this.ref = setInterval(async () => {
       const res = await activeWin();
