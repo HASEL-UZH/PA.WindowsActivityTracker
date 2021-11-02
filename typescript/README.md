@@ -1,6 +1,6 @@
 # WindowsActivityTracker for Typescript
 
-This tracker exposes a tracker that can be used to listen to active window changes on any platform (MacOS, Windows, and Linux)
+This tracker can be used to listen to active window changes on any platform (MacOS, Windows, and Linux)
 
 ## How to use
 
@@ -17,3 +17,9 @@ tracker.start();
 ## Platform specific notes
 
 The url field on the ActiveWindow class is currently only supported on MacOS.
+
+## Known Issues
+
+## Thanks
+
+Huge thanks to the maintainers of active-win: https://github.com/sindresorhus/active-win
