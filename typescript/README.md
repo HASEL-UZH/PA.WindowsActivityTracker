@@ -7,13 +7,13 @@ This tracker can be used to listen to active window changes on any platform (Mac
 Add this git repository to your project as a git submodule
 
 ```
-git submodule add https://github.com/HASEL-UZH/PA.UserInputTracker
+git submodule add https://github.com/HASEL-UZH/PA.WindowsActivityTracker
 ```
 
 Install the package by adding to package.json and running npm install
 
 ```
-npm i ./PA.UserInputTracker/typescript
+npm i ./PA.WindowsActivityTracker/typescript
 ```
 
 The simplest example looks as follows
