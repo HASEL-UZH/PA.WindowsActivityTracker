@@ -172,8 +172,8 @@ export class WindowsActivityTracker implements ITracker {
 
       const window = {
         ts: new Date(),
-        windowTitle: res?.title,
-        process: res?.owner.name,
+        windowTitle: res?.title || "[no window selected]",
+        process: res?.owner.name || "[no window selected]",
         url: res?.platform === "macos" ? res.url : undefined,
       };
 
