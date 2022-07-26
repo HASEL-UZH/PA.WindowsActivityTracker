@@ -50,7 +50,7 @@ export class WindowsActivityTracker implements ITracker {
         // Or, if there is a window that is different from the previous window
         if (
           !this._prev ||
-          (this._prev.windowTitle !== window.windowTitle &&
+          (this._prev.windowTitle !== window.windowTitle ||
             this._prev.process !== window.process)
         ) {
           // for performance reasons we only determine the activity once we actually have to
