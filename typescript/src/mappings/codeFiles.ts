@@ -35,7 +35,7 @@ const codeFiles = [
   ".view",
   ".script",
   ".ccproj",
-  "js",
+  ".js",
   ".php",
   ".xhtml",
   ".sh",
