@@ -43,6 +43,8 @@ export class WindowsActivityTracker implements ITracker {
           ts: new Date(),
           windowTitle: res?.title || "[no window selected]",
           process: res?.owner.name || "[no window selected]",
+          processPath: res?.owner.path,
+          processId: res?.owner.processId,
           url: res?.platform === "macos" ? res.url : undefined,
         };
 
