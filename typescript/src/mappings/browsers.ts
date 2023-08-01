@@ -4,7 +4,7 @@ const browsers = [
   "edge",
   "firefox",
   "opera",
-  "safari"
+  "safari",
 ];
 
 export default browsers;
