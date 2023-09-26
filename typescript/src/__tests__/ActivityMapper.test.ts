@@ -48,7 +48,7 @@ test.each(cases)(
   function (
     process: string | undefined,
     windowTitle: string | undefined,
-    activity: Activity
+    activity: Activity | string | undefined
   ) {
     expect(determineActivity(windowTitle, process)).toBe(activity);
   }
