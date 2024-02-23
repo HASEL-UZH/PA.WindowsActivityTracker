@@ -1,9 +1,10 @@
 const browsers = [
+  "brave",
   "chrome",
+  "edge",
   "firefox",
   "opera",
   "safari",
-  "edge",
 ];
 
 export default browsers;
