@@ -6,7 +6,7 @@ type ActiveWindow = {
   process: string | undefined;
   processPath: string | undefined;
   processId: number | undefined;
-  url: string | undefined; // only available on MacOS
+  url: string | undefined; // only available on macOS
   activity: Activity;
 };
 export default ActiveWindow;
