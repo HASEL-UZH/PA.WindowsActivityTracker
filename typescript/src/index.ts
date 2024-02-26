@@ -2,6 +2,7 @@ import activeWin from "active-win";
 import ITracker from "./types/ITracker";
 import ActiveWindow from "./types/ActiveWindow";
 import determineActivity from "./determineActivity";
+import {determineWindowTitle} from "./determineWindowTitle";
 
 /**
  * This is a cross-platform tracker class that allows you to subscribe to active window changes. It does so by wrapping the 'active-win' library found at: https://www.npmjs.com/package/active-win
@@ -66,8 +67,10 @@ export class WindowsActivityTracker implements ITracker {
           (this._prev.windowTitle !== window.windowTitle ||
             this._prev.process !== window.process)
         ) {
+          window.windowTitle = determineWindowTitle(window.windowTitle);
+
           // For performance reasons we only determine the activity once we actually have to
-          const activity = determineActivity(res?.title, res?.owner.name);
+          const activity = determineActivity(window.windowTitle, res?.owner.name);
           const activeWindow: ActiveWindow = { ...window, activity };
           this.onWindowChange(activeWindow);
           this._prev = activeWindow;
