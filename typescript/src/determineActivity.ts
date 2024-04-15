@@ -99,8 +99,17 @@ export default function determineActivity(
     if (isActivity(Activity.ReadWriteDocument, windowTitle, process))
       return Activity.ReadWriteDocument;
 
+    if (isActivity(Activity.Design, windowTitle, process))
+      return Activity.Design;
+
+    if (isActivity(Activity.GenerativeAI, windowTitle, process))
+      return Activity.GenerativeAI;
+
     if (isActivity(Activity.InstantMessaging, windowTitle, process))
       return Activity.InstantMessaging;
+
+    if (isActivity(Activity.SocialMedia, windowTitle, process))
+      return Activity.SocialMedia;
 
     if (isBrowser(process)) {
       if (isWebsiteWorkRelated(windowTitle))
@@ -117,9 +126,6 @@ export default function determineActivity(
 
     if (isActivity(Activity.OtherRdp, windowTitle, process))
       return Activity.OtherRdp;
-
-    if (isActivity(Activity.Gaming, windowTitle, process))
-      return Activity.Gaming;
 
     if (isActivity(Activity.Other, windowTitle, process)) return Activity.Other;
 
