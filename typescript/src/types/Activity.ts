@@ -6,7 +6,7 @@ enum Activity {
   DevVc = "DevVc",
   Planning = "Planning",
   ReadWriteDocument = "ReadWriteDocument",
-  Design = "design",
+  Design = "Design",
   GenerativeAI = "GenerativeAI",
   PlannedMeeting = "PlannedMeeting",
   Email = "Email",
