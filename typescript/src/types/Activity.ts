@@ -4,19 +4,20 @@ enum Activity {
   DevDebug = "DevDebug",
   DevReview = "DevReview",
   DevVc = "DevVc",
-  Email = "Email",
   Planning = "Planning",
   ReadWriteDocument = "ReadWriteDocument",
+  Design = "Design",
+  GenerativeAI = "GenerativeAI",
   PlannedMeeting = "PlannedMeeting",
-  InformalMeeting = "InformalMeeting",
-  InstantMessaging = "InstantMessaging", // subcategory of InformalMeeting
+  Email = "Email",
+  InstantMessaging = "InstantMessaging",
   WorkRelatedBrowsing = "WorkRelatedBrowsing",
   WorkUnrelatedBrowsing = "WorkUnrelatedBrowsing",
-  FileNavigationInExplorer = "FileNavigationInExplorer",
+  SocialMedia = "SocialMedia", // sub-group of WorkUnrelatedBrowsing
+  FileManagement = "FileManagement",
   Other = "Other",
   OtherRdp = "OtherRdp",
   Idle = "Idle", // all IDLE events that can't be mapped elsewhere
-  Gaming = "Gaming",
   Unknown = "Unknown",
 }
 

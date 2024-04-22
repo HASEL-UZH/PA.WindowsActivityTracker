@@ -99,27 +99,34 @@ export default function determineActivity(
     if (isActivity(Activity.ReadWriteDocument, windowTitle, process))
       return Activity.ReadWriteDocument;
 
+    if (isActivity(Activity.Design, windowTitle, process))
+      return Activity.Design;
+
+    if (isActivity(Activity.GenerativeAI, windowTitle, process))
+      return Activity.GenerativeAI;
+
     if (isActivity(Activity.InstantMessaging, windowTitle, process))
       return Activity.InstantMessaging;
+
+    if (isActivity(Activity.SocialMedia, windowTitle, process))
+      return Activity.SocialMedia;
+    
+    if (isActivity(Activity.FileManagement, windowTitle, process))
+      return Activity.FileManagement;
 
     if (isBrowser(process)) {
       if (isWebsiteWorkRelated(windowTitle))
         return Activity.WorkRelatedBrowsing;
       if (isWebsiteWorkUnrelated(windowTitle))
         return Activity.WorkUnrelatedBrowsing;
-      if (isCodeFile(windowTitle)) return Activity.DevCode;
+      if (isCodeFile(windowTitle)) 
+        return Activity.DevCode;
 
       return Activity.WorkRelatedBrowsing; // assume work related browsing as base case
     }
 
-    if (isActivity(Activity.FileNavigationInExplorer, windowTitle, process))
-      return Activity.FileNavigationInExplorer;
-
     if (isActivity(Activity.OtherRdp, windowTitle, process))
       return Activity.OtherRdp;
-
-    if (isActivity(Activity.Gaming, windowTitle, process))
-      return Activity.Gaming;
 
     if (isActivity(Activity.Other, windowTitle, process)) return Activity.Other;
 

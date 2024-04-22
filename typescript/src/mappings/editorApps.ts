@@ -1,5 +1,5 @@
 const editorApps = [
-  "notepad",
+  "notepad", // include notepad++
   "xmlspy",
   "sublime",
   "emacs",
