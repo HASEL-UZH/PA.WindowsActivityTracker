@@ -110,19 +110,20 @@ export default function determineActivity(
 
     if (isActivity(Activity.SocialMedia, windowTitle, process))
       return Activity.SocialMedia;
+    
+    if (isActivity(Activity.FileManagement, windowTitle, process))
+      return Activity.FileManagement;
 
     if (isBrowser(process)) {
       if (isWebsiteWorkRelated(windowTitle))
         return Activity.WorkRelatedBrowsing;
       if (isWebsiteWorkUnrelated(windowTitle))
         return Activity.WorkUnrelatedBrowsing;
-      if (isCodeFile(windowTitle)) return Activity.DevCode;
+      if (isCodeFile(windowTitle)) 
+        return Activity.DevCode;
 
       return Activity.WorkRelatedBrowsing; // assume work related browsing as base case
     }
-
-    if (isActivity(Activity.FileNavigationInExplorer, windowTitle, process))
-      return Activity.FileNavigationInExplorer;
 
     if (isActivity(Activity.OtherRdp, windowTitle, process))
       return Activity.OtherRdp;

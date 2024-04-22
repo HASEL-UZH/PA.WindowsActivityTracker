@@ -14,7 +14,7 @@ enum Activity {
   WorkRelatedBrowsing = "WorkRelatedBrowsing",
   WorkUnrelatedBrowsing = "WorkUnrelatedBrowsing",
   SocialMedia = "SocialMedia", // sub-group of WorkUnrelatedBrowsing
-  FileNavigationInExplorer = "FileNavigationInExplorer",
+  FileManagement = "FileManagement",
   Other = "Other",
   OtherRdp = "OtherRdp",
   Idle = "Idle", // all IDLE events that can't be mapped elsewhere

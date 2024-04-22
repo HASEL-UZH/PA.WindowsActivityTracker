@@ -381,7 +381,7 @@ const activityMappings = {
     "basecamp",
     "voip" // includes PhonerLite VoIP Softphone
   ],
-  [Activity.FileNavigationInExplorer]: [
+  [Activity.FileManagement]: [
     "finder",
     "explorer",
     "speedcommander",
@@ -391,7 +391,9 @@ const activityMappings = {
     "winzip32",
     "winzip64",
     "winrar",
-    "drive", // includes onedrive, google drive
+    "onedrive",
+    "googledrive",
+    "google drive",
     "box", // includes box, dropbox
     "mega", 
     "icloud",
