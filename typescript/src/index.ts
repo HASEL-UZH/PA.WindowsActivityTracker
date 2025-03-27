@@ -9,7 +9,7 @@ import {determineWindowTitle} from "./determineWindowTitle";
  * It should be noted that per default in case a window was active for less than 1 second, there is a possibility that the callback will not fire. If you need to have more precise window change events, consider lowering "checkingForWindowChangeInterval"
  */
 export class WindowsActivityTracker implements ITracker {
-  name = "WindowsActivityTracker";
+  name = "Window Activity Monitor";
   isRunning = false;
   private ref: NodeJS.Timeout | undefined;
 
