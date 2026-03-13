@@ -18,8 +18,6 @@ export const title = [
   "cleardiffmrg",
   "clearhistory",
   "clearvtree",
-  "push",
-  "pull",
   "commit",
   "bitbucket",
   "visual studio online", // TODO: what about azure devops?
