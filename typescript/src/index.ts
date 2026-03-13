@@ -1,4 +1,3 @@
-import {activeWindow} from "get-windows";
 import ITracker from "./types/ITracker";
 import ActiveWindow from "./types/ActiveWindow";
 import determineActivity from "./determineActivity";
@@ -47,6 +46,7 @@ export class WindowsActivityTracker implements ITracker {
 
     this.ref = setInterval(async () => {
       try {
+        const {activeWindow} = await import("get-windows");
         const res = await activeWindow({
           accessibilityPermission: this.accessibilityPermission,
           screenRecordingPermission: this.screenRecordingPermission,
