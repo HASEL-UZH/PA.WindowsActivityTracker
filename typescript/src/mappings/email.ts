@@ -1,5 +1,5 @@
 const email = [
-  "mail", // includes gmail, proton mail, apple mail, canary mail, mailsprint, mailbird, edison mail
+  "mail", // includes gmail, proton mail, apple mail, canary mail, mailsprint, mailbird, edison mail, webmail, freemail, airmail
   "outlook", // includes outlook.com
   "thunderbird",
   "gmail",
@@ -7,7 +7,14 @@ const email = [
   "superhuman",
   "spark",
   "postbox",
-  "kiwi"
+  "kiwi",
+  "posteingang",
+  "postausgang",
+  "inbox",
+  "imobx",
+  "outbox",
+  "proton",
+  "mimestream"
 ];
 
 export default email;
