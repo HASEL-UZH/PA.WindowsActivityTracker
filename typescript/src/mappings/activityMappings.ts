@@ -332,9 +332,8 @@ const activityMappings = {
     "openai", 
     "chatgpt", 
     "gpt", 
-    "copilot", 
+    "copilot", // Github and Microsoft
     "gemini", 
-    "bard", 
     "claude", 
     "cohere", 
     "synthesia", 
@@ -344,7 +343,23 @@ const activityMappings = {
     "codewhisperer", 
     "tabnine", 
     "codewp", 
-    "codesquire"
+    "codesquire",
+    "deepseek",
+    "grok",
+    "perplexity",
+    "ollama",
+    "mistral",
+    "codeium",
+    "windsurf",
+    "elevenlabs",
+    "notebooklm",
+    "huggingface",
+    "stable diffusion",
+    "cursor",
+    "runway",
+    "leonardo",
+    "firefly",
+    "qwen"
   ],
   [Activity.InstantMessaging]: [
     "chat", // includes wechat, chatter
