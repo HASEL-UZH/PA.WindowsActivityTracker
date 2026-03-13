@@ -1,29 +1,32 @@
-const planning = [
-  "backlog",
-  "atlassian",
+export const process = [
+  "winproj",
+  "omnifocus",
+  "ticktick",
+  "mattermost",
+  "personalanalytics",
+  "rescuetime",
+  "codealike",
+  "xmind",
+  "todoist",
+  "trello",
+  "linear",
+  "airtable",
+  "clickup",
+  "flowteams",
   "ical",
+];
+
+// title keywords: only matched in browser context
+export const title = [
+  "backlog",
   "calendly",
   "hakuna",
   "clocker",
-  "linear",
   "getplan",
-  "airtable",
-  "omnifocus",
-  "tickctick",
-  "mattermost",
   "productboard",
-  "winproj",
-  "trello",
-  "wunderlist",
-  "todoist",
-  "personalanalytics",
-  "time tracking",
-  "track time",
-  "rescuetime",
   "clearquest",
   "scrum",
   "kanban",
-  "codealike",
   "jira",
   "rally",
   "versionone",
@@ -31,7 +34,7 @@ const planning = [
   "kalender",
   "sprint",
   "user story",
-  "plan", // includes Microsoft Planner
+  "planner", // includes Microsoft Planner
   "project", // includes Microsoft Project
   "microsoft to-do",
   "to-do",
@@ -40,10 +43,7 @@ const planning = [
   "aufgabe",
   "vorgangsliste",
   "work item",
-  "xmind",
   "monday.com",
-  "clickup",
-  "flowteams",
+  "time tracking",
+  "track time",
 ];
-
-export default planning;

@@ -1,18 +1,21 @@
-const devDebug = [
+export const process = [
   "vshost",
   "xde",
-  "javaw",
   "debug",
-  "bugger",
   "windbg",
   "perfview",
   "cdb",
   "msmunittest",
-  "bug",
   "snoop",
   "bushound",
   "hyjalmercurydiag",
-  "localhost"
 ];
 
-export default devDebug;
+// title keywords: only matched in browser context
+export const title = [
+  "bugger",
+  "bugzilla",
+  "bug report",
+  "junit",
+  "localhost", // local dev server open in browser
+];

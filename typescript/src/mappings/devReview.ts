@@ -1,6 +1,10 @@
-const devReview = [
+export const process = [
   "codeflow",
-  "gerrit",
+  "gerrit", // Gerrit also has CLI tooling
+];
+
+// title keywords: only matched in browser context
+export const title = [
   "stash",
   "kallithea",
   "code review",
@@ -9,5 +13,3 @@ const devReview = [
   "crucible",
   "phabricator",
 ];
-
-export default devReview;

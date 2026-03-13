@@ -1,19 +1,14 @@
-const instantMessaging = [
-  "chat", // includes wechat, chatter
+export const process = [
   "slack",
   "skype",
   "lync",
   "discord",
   "sip", // includes MicroSIP
-  "mqtt",
   "g2mlauncher",
   "nbrplay",
   "g2mui",
   "atmgr",
-  "hangout",
-  "meet", // includes Google Meet
   "viber",
-  "messaging",
   "whatsapp",
   "messenger",
   "ctimon",
@@ -25,13 +20,18 @@ const instantMessaging = [
   "facetime",
   "gotomeeting",
   "ciscowebexstart",
-  "anydesk",
   "ciscospark",
   "ciscojabber",
   "teams",
   "zoom",
   "basecamp",
-  "voip" // includes PhonerLite VoIP Softphone
+  "voip", // includes PhonerLite VoIP Softphone
 ];
 
-export default instantMessaging;
+// title keywords: only matched in browser context
+export const title = [
+  "chat", // includes wechat, google chat — too generic for process matching
+  "google hangout",
+  "google meet",
+  "messaging",
+];

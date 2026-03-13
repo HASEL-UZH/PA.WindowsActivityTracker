@@ -1,9 +1,9 @@
-const socialMedia = [
+export const process = [
   "instagram",
   "flickr",
   "facebook",
   "reddit",
-  "twitter", // we cannot match X since there will be many false-positives
+  "twitter",
   "tumblr",
   "threads",
   "youtube",
@@ -14,9 +14,11 @@ const socialMedia = [
   "mastodon",
   "vimeo",
   "twitch",
-  "x.com",
   // "linkedin", // not included as mapped as WorkRelatedBrowsing
   // "substack", // not included, as mapped as WorkRelatedBrowsing
 ];
 
-export default socialMedia;
+// title keywords: only matched in browser context
+export const title = [
+  "x.com", // Twitter's current domain — too generic as a process name
+];

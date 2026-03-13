@@ -1,4 +1,4 @@
-const generativeAI = [
+export const process = [
   "openai",
   "chatgpt",
   "gpt",
@@ -9,7 +9,6 @@ const generativeAI = [
   "synthesia",
   "dall-e",
   "midjourney",
-  "generative",
   "codewhisperer",
   "tabnine",
   "codewp",
@@ -24,7 +23,6 @@ const generativeAI = [
   "elevenlabs",
   "notebooklm",
   "huggingface",
-  "stable diffusion",
   "cursor",
   "runway",
   "leonardo",
@@ -32,4 +30,6 @@ const generativeAI = [
   "qwen",
 ];
 
-export default generativeAI;
+// title keywords: only matched in browser context
+export const title = [
+];

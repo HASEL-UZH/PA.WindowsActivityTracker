@@ -1,4 +1,4 @@
-const fileManagement = [
+export const process = [
   "finder",
   "explorer",
   "speedcommander",
@@ -10,10 +10,14 @@ const fileManagement = [
   "winrar",
   "onedrive",
   "googledrive",
-  "google drive",
-  "box", // includes box, dropbox
   "mega",
   "icloud",
+  "searchui",
+  "dropbox",
+  "box" // could have false positives with sandbox, mailbox
 ];
 
-export default fileManagement;
+// title keywords: only matched in browser context
+export const title = [
+  "sharepoint"
+];

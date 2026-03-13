@@ -1,4 +1,4 @@
-const otherRdp = [
+export const process = [
   "rdcman",
   "mstsc",
   "vmconnect",
@@ -6,11 +6,11 @@ const otherRdp = [
   "vmware",
   "remotedesktop",
   "vpxclient",
-  "msiexec",
   "pageant",
   "putty",
   "mremote",
   "mremoteng",
+  "anydesk",
 ];
 
-export default otherRdp;
+export const title: string[] = [];

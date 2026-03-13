@@ -1,24 +1,24 @@
-const design = [
+export const process = [
+  "sketch",
+  "creative cloud",
+  "figma",
+  "zeplin",
+  "photoshop",
+  "indesign",
+  "picasa",
+  "illustrator",
+  "mspaint",
+  "paintdotnet",
+  "photofiltre",
+  "gimp",
+  "sketchup",
+];
+
+// title keywords: only matched in browser context
+export const title = [
   "invisionapp.com",
   "unsplash.com",
   "readymag.com",
   "jam.dev",
   "canva.com",
-  "sketch",
-  "creative cloud",
-  "figma",
-  "zeplin",
-  "adobe illustrator",
-  "photoshop",
-  "adobe xd",
-  "indesign",
-  "picasa",
-  "illustrator",
-  "sketchUp",
-  "paint",
-  "windows photo viewer",
-  "photofiltre",
-  "gimp",
 ];
-
-export default design;

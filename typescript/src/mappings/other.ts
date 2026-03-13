@@ -1,4 +1,4 @@
-const other = [
+export const process = [
   "mmc",
   "dfsvc",
   "procmon64",
@@ -6,40 +6,34 @@ const other = [
   "vpnui",
   "dinotify",
   "calculator",
-  "time",
   "perfmon",
   "1password",
   "lastpass",
   "keepass",
   "agentransack",
   "lockapp",
-  "searchui",
   "pwsafe",
   "wuauclt",
   "calc", // includes calculator
   "rechner",
   "wwahost",
-  "update",
   "avpui",
   "procexp64",
   "taskmgr",
+  "task manager", // display name variant of taskmgr
   "activity monitor",
-  "clean my mac",
   "pgp",
   "groove",
   "spotify",
-  "vlc media player",
+  "vlc",
   "windows camera",
   "dwm",
   "rstrui",
   "snippingtool",
   "screenclippinghost",
-  "settings",
-  "einstellungen",
   "ccleaner64",
   "avira.systray",
   "defender",
-  "check point endpoint security",
   "company portal",
   "avscan",
   "rzsynapse",
@@ -51,8 +45,10 @@ const other = [
   "msaccess",
   "audacity",
   "icofx3",
-  "news",
-  "twitchui",
 ];
 
-export default other;
+// title keywords: only matched in browser context
+export const title = [
+  "settings",
+  "einstellungen",
+];
