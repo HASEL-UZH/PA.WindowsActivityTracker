@@ -1,5 +1,6 @@
 const workRelatedWebsites = [
   "linkedin",
+  "substack",
   "techready",
   "powerapps",
   "angular",

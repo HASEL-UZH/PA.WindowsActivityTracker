@@ -141,8 +141,6 @@ const workUnRelatedWebsites = [
   "20 minuten",
   "facebook",
   "reddit",
-  "twitter",
-  "google+",
   "news",
   "aktuell",
   "9gag",
@@ -154,7 +152,6 @@ const workUnRelatedWebsites = [
   "movie",
   "cinema",
   "kino",
-  "twitch",
 ];
 
 export default workUnRelatedWebsites;
