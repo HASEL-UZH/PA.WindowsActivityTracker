@@ -35,11 +35,10 @@ const cases = [
   ["firefox", "messenger", Activity.InstantMessaging],
   ["firefox", "linkedin", Activity.WorkRelatedBrowsing],
   ["firefox", "", Activity.WorkRelatedBrowsing],
-  ["firefox", "facebook", Activity.WorkUnrelatedBrowsing],
-  ["explorer", "", Activity.FileNavigationInExplorer],
-  ["finder", "", Activity.FileNavigationInExplorer],
+  ["firefox", "facebook", Activity.SocialMedia],
+  ["explorer", "", Activity.FileManagement],
+  ["finder", "", Activity.FileManagement],
   ["vmware", "", Activity.OtherRdp],
-  ["battle.net", "", Activity.Gaming],
   ["searchui", "", Activity.Other],
 ];
 

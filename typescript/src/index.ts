@@ -1,7 +1,7 @@
-import ITracker from "./types/ITracker";
-import ActiveWindow from "./types/ActiveWindow";
-import determineActivity from "./determineActivity";
-import {determineWindowTitle} from "./determineWindowTitle";
+import ITracker from "./types/ITracker.js";
+import ActiveWindow from "./types/ActiveWindow.js";
+import determineActivity from "./determineActivity.js";
+import {determineWindowTitle} from "./determineWindowTitle.js";
 
 /**
  * This is a cross-platform tracker class that allows you to subscribe to active window changes. It does so by wrapping the 'active-win' library found at: https://www.npmjs.com/package/active-win
