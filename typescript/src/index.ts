@@ -70,7 +70,7 @@ export class WindowsActivityTracker implements ITracker {
           window.windowTitle = determineWindowTitle(window.windowTitle);
 
           // For performance reasons we only determine the activity once we actually have to
-          const activity = determineActivity(window.windowTitle, res?.owner.name);
+          const activity = determineActivity(window.windowTitle, res?.owner.name, res?.owner.path);
           const activeWindow: ActiveWindow = { ...window, activity };
           this.onWindowChange(activeWindow);
           this._prev = activeWindow;
