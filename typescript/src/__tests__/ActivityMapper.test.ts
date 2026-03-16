@@ -16,7 +16,7 @@ const cases = [
   ["___", "___", Activity.Unknown],
   ["idle", undefined, Activity.Idle],
   ["idle", "Not Idle", Activity.Idle],
-  ["something", "Task view", Activity.Planning],
+  ["something", "Task view", Activity.Unknown], // process-first: title only checked for browsers/editors
   ["trello", "Trello", Activity.Planning],
   ["taskmgr", "Task Manager", Activity.Other],
   ["mail", "mail", Activity.Email],
@@ -35,12 +35,21 @@ const cases = [
   ["firefox", "messenger", Activity.InstantMessaging],
   ["firefox", "linkedin", Activity.WorkRelatedBrowsing],
   ["firefox", "", Activity.WorkRelatedBrowsing],
-  ["firefox", "facebook", Activity.WorkUnrelatedBrowsing],
-  ["explorer", "", Activity.FileNavigationInExplorer],
-  ["finder", "", Activity.FileNavigationInExplorer],
+  ["firefox", "facebook", Activity.SocialMedia],
+  ["explorer", "", Activity.FileManagement],
+  ["finder", "", Activity.FileManagement],
   ["vmware", "", Activity.OtherRdp],
-  ["battle.net", "", Activity.Gaming],
-  ["searchui", "", Activity.Other],
+  ["battle.net", "", Activity.Unknown],
+  ["searchui", "", Activity.FileManagement],
+  ["DB Browser for SQLite", "DB Browser for SQLite - C:\DATA\DEV\UZH\PersonalAnalytics\src\electron\database.sqlite", Activity.DevCode],
+  ["Visual Studio Code", "[Claude Code] c:\DATA\DEV\UZH\PA.WindowsActivityTracker\typescript\src\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", Activity.GenerativeAI], 
+  ["Visual Studio Code", "c:\DATA\DEV\UZH\PA.WindowsActivityTracker\typescript\src\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", Activity.DevCode], 
+  ["Task Manager", "Task Manager", Activity.Other],
+  ["Microsoft Word", "Howrse_Zubbelplan.docx - Word", Activity.ReadWriteDocument],
+  ["Microsoft Word", "wyaehb", Activity.ReadWriteDocument],
+  ["freemail", "", Activity.Email],
+  ["Microsoft Teams", "Chat | <name> | <tenant> | <user> | Microsoft Teams", Activity.InstantMessaging],
+  ["PowerPoint", "AI_Augmented_Developer.pptx", Activity.ReadWriteDocument]
 ];
 
 test.each(cases)(
