@@ -1,6 +1,6 @@
 export default interface ITracker {
   name: string;
   isRunning: boolean;
-  start(): void;
+  start(): Promise<void>;
   stop(): void;
 }
