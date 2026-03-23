@@ -38,15 +38,15 @@ export class WindowsActivityTracker implements ITracker {
     this.screenRecordingPermission = screenRecordingPermission;
   }
 
-  async start(): Promise<void> {
+  start(): void {
     if (this.isRunning) {
       console.log(`${this.name} is already running!`);
       return;
     }
 
-    const {activeWindow} = await import("get-windows");
     this.ref = setInterval(async () => {
       try {
+        const {activeWindow} = await import("get-windows");
         const res = await activeWindow({
           accessibilityPermission: this.accessibilityPermission,
           screenRecordingPermission: this.screenRecordingPermission,
