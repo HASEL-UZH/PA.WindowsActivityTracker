@@ -26,6 +26,11 @@ export const process = [
   "zoom",
   "basecamp",
   "voip", // includes PhonerLite VoIP Softphone
+  "wechat", // wechat
+  "weixin", // WeChat (localized)
+  "tim", // Tencent IM
+  "messages", // Apple iMessage
+  "qq", // Tencent QQ
 ];
 
 // title keywords: only matched in browser context

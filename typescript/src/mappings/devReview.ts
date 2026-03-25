@@ -5,6 +5,7 @@ export const process = [
 
 // title keywords: only matched in browser context
 export const title = [
+  "pull request",
   "stash",
   "kallithea",
   "code review",

@@ -10,6 +10,7 @@ export const process = [
   "clearfindco",
   "jupyter",
   "mariadb",
+  "godot",
   "mongodb",
   "electron",
   "db2",
@@ -54,6 +55,7 @@ export const process = [
   "bash", // includes git bash
   "powershell",
   "shell",
+  "terminal",
   "cmd",
   "komodo",
   "aptana",
@@ -81,6 +83,8 @@ export const process = [
   "unity",
   "matlab",
   "xcode",
+  "thonny", // Python IDE for beginners
+  "pgadmin", // PostgreSQL admin tool
 ];
 
 // title keywords: only matched in browser context

@@ -4,12 +4,30 @@ export const process = [
   "procmon64",
   "mousewithoutboarders",
   "vpnui",
+  "pulsesecure",
+  "nordvpn",
+  "ivanti",
   "dinotify",
   "calculator",
+  "shadow",
   "perfmon",
   "1password",
   "lastpass",
   "keepass",
+  "safe", // password manager app
+  "norton", // Norton
+  "ns.exe", // Norton
+  "nortonsecurity", // Norton
+  "msmpeng", // Windows Defender
+  "securityhealthsystray", // Windows Defender
+  "msmpeng", // Windows Defender
+  "avg", // AVG
+  "avast", 
+  "bitdefender",
+  "mcaffee",
+  "avira",
+  "avira.systray",
+  "crowdstrike",
   "agentransack",
   "lockapp",
   "pwsafe",
@@ -22,17 +40,26 @@ export const process = [
   "taskmgr",
   "task manager", // display name variant of taskmgr
   "activity monitor",
+  "credential manager ui host",
+  "windows start experience host",
+  "startmenuexperiencehost",
+  "comsol", // physics simulation software
   "pgp",
-  "groove",
   "spotify",
   "vlc",
+  "music", // Apple music
+  "brain.fm",
+  "netease cloud music",
   "windows camera",
+  "windows media player",
+  "microsoft.media.player",
   "dwm",
   "rstrui",
   "snippingtool",
+  "snipping tool",
   "screenclippinghost",
+  "screenpresso",
   "ccleaner64",
-  "avira.systray",
   "defender",
   "company portal",
   "avscan",
@@ -42,9 +69,17 @@ export const process = [
   "devicepairingwizard",
   "printui",
   "sapisvr",
-  "msaccess",
   "audacity",
+  "safe exam browser",
   "icofx3",
+  "steam client webhelper",
+  "steam helper",
+  "wegame",
+  "ea",
+  "cyberpunk",
+  "league of legends",
+  "tradingview",
+  "solitaire"
 ];
 
 // title keywords: only matched in browser context

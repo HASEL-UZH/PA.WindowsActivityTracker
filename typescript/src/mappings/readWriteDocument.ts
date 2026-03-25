@@ -17,6 +17,12 @@ export const process = [
   "keynote",
   "onenote",
   "evernote",
+  "notion",
+  "notes", // Apple notes
+  "microsoft.notes",
+  "endnote",
+  "numbers", // Apple spreadsheet app
+  "remnote",
   "acrord",
   "foxitreader",
   "adobe reader",
@@ -39,7 +45,23 @@ export const process = [
   "honeyview",
   "mendeley",
   "zotero",
-  "apple pages"
+  "apple pages",
+  "msaccess",
+  "imagej",
+  "cmi.client.main",
+  "biolucidaviewer",
+  "mim",
+  "olat",
+  "spss",
+  "qgis", // GIS software
+  "notability", // note-taking app
+  "anki", // flashcard/spaced repetition
+  "preview", // macOS Preview
+  "journal", // Windows/Apple Journal
+  "express scribe", // transcription software
+  "okular", // KDE document viewer
+  "nebo", // handwriting note-taking
+  "stickies", // sticky notes app
 ];
 
 // title keywords: only matched in browser context
