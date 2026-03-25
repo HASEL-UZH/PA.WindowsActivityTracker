@@ -4,61 +4,63 @@ import determineActivity from "../determineActivity";
 
 /**
  * The structure of this test array is as follows
- * Index 1: Process string
- * Index 2: Window title string
- * Index 3: The to be expected activity
+ * Index 0: expected activity
+ * Index 1: processName string
+ * Index 2: windowTitle string
+ * Index 3: processPath string (optional)
  */
-const cases = [
-  ["", "", Activity.Unknown],
-  [undefined, undefined, Activity.Unknown],
-  ["___", undefined, Activity.Unknown],
-  [undefined, "___", Activity.Unknown],
-  ["___", "___", Activity.Unknown],
-  ["idle", undefined, Activity.Idle],
-  ["idle", "Not Idle", Activity.Idle],
-  ["something", "Task view", Activity.Unknown], // process-first: title only checked for browsers/editors
-  ["trello", "Trello", Activity.Planning],
-  ["taskmgr", "Task Manager", Activity.Other],
-  ["mail", "mail", Activity.Email],
-  ["vim", ".ts", Activity.DevCode],
-  ["vim", "___", Activity.DevCode],
-  ["rstudio", "", Activity.DevCode],
-  ["firefox", ".ts", Activity.DevCode],
-  ["debug", "debug", Activity.DevDebug],
-  ["gerrit", "code review", Activity.DevReview],
-  ["diff", "diff", Activity.DevVc],
-  ["vim", "", Activity.ReadWriteDocument],
-  ["vim", "new file", Activity.ReadWriteDocument],
-  ["vim", "vim", Activity.ReadWriteDocument],
-  ["confluence", "", Activity.ReadWriteDocument],
-  ["messenger", "messenger", Activity.InstantMessaging],
-  ["firefox", "messenger", Activity.InstantMessaging],
-  ["firefox", "linkedin", Activity.WorkRelatedBrowsing],
-  ["firefox", "", Activity.WorkRelatedBrowsing],
-  ["firefox", "facebook", Activity.SocialMedia],
-  ["explorer", "", Activity.FileManagement],
-  ["finder", "", Activity.FileManagement],
-  ["vmware", "", Activity.OtherRdp],
-  ["battle.net", "", Activity.Unknown],
-  ["searchui", "", Activity.FileManagement],
-  ["DB Browser for SQLite", "DB Browser for SQLite - C:\DATA\DEV\UZH\PersonalAnalytics\src\electron\database.sqlite", Activity.DevCode],
-  ["Visual Studio Code", "[Claude Code] c:\DATA\DEV\UZH\PA.WindowsActivityTracker\typescript\src\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", Activity.GenerativeAI], 
-  ["Visual Studio Code", "c:\DATA\DEV\UZH\PA.WindowsActivityTracker\typescript\src\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", Activity.DevCode], 
-  ["Task Manager", "Task Manager", Activity.Other],
-  ["Microsoft Word", "Howrse_Zubbelplan.docx - Word", Activity.ReadWriteDocument],
-  ["Microsoft Word", "wyaehb", Activity.ReadWriteDocument],
-  ["freemail", "", Activity.Email],
-  ["Microsoft Teams", "Chat | <name> | <tenant> | <user> | Microsoft Teams", Activity.InstantMessaging],
-  ["PowerPoint", "AI_Augmented_Developer.pptx", Activity.ReadWriteDocument]
+const cases: [Activity, string | undefined, string | undefined, string?][] = [
+  [Activity.Unknown, "", "", undefined],
+  [Activity.Unknown, undefined, undefined, undefined],
+  [Activity.Unknown, "___", undefined, undefined],
+  [Activity.Unknown, undefined, "___", undefined],
+  [Activity.Unknown, "___", "___", undefined],
+  [Activity.Idle, "idle", undefined, undefined],
+  [Activity.Idle, "idle", "Not Idle", undefined],
+  [Activity.Unknown, "something", "Task view", undefined], // process-first: title only checked for browsers/editors
+  [Activity.Planning, "trello", "Trello", undefined],
+  [Activity.Other, "taskmgr", "Task Manager", undefined],
+  [Activity.Email, "mail", "mail", undefined],
+  [Activity.DevCode, "vim", ".ts", undefined],
+  [Activity.DevCode, "vim", "___", undefined],
+  [Activity.DevCode, "rstudio", "", undefined],
+  [Activity.DevCode, "firefox", ".ts", undefined],
+  [Activity.DevDebug, "debug", "debug", undefined],
+  [Activity.DevReview, "gerrit", "code review", undefined],
+  [Activity.DevVc, "diff", "diff", undefined],
+  [Activity.ReadWriteDocument, "vim", "", undefined],
+  [Activity.ReadWriteDocument, "vim", "new file", undefined],
+  [Activity.ReadWriteDocument, "vim", "vim", undefined],
+  [Activity.ReadWriteDocument, "confluence", "", undefined],
+  [Activity.InstantMessaging, "messenger", "messenger", undefined],
+  [Activity.InstantMessaging, "firefox", "messenger", undefined],
+  [Activity.WorkRelatedBrowsing, "firefox", "linkedin", undefined],
+  [Activity.WorkRelatedBrowsing, "firefox", "", undefined],
+  [Activity.SocialMedia, "firefox", "facebook", undefined],
+  [Activity.FileManagement, "explorer", "", undefined],
+  [Activity.FileManagement, "finder", "", undefined],
+  [Activity.OtherRdp, "vmware", "", undefined],
+  [Activity.Unknown, "battle.net", "", undefined],
+  [Activity.FileManagement, "searchui", "", undefined],
+  [Activity.DevCode, "DB Browser for SQLite", "DB Browser for SQLite - C:\\DATA\\DEV\\UZH\\PersonalAnalytics\\src\\electron\\database.sqlite", undefined],
+  [Activity.GenerativeAI, "Visual Studio Code", "[Claude Code] c:\\DATA\\DEV\\UZH\PA.WindowsActivityTracker\\typescript\\src\\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", undefined],
+  [Activity.DevCode, "Visual Studio Code", "c:\\DATA\\DEV\\UZH\\PA.WindowsActivityTracker\\typescript\\src\\index.ts (index.ts) - PA.WindowsActivityTracker - Visual Studio Code", undefined],
+  [Activity.DevReview, "Microsoft Edge", "Pull Request #31 · HASEL-UZH/PA.WindowsActivityTracker and 2 more pages - HASEL - Microsoft Edge", undefined],
+  [Activity.Other, "Task Manager", "Task Manager", undefined],
+  [Activity.ReadWriteDocument, "Microsoft Word", "Howrse_Zubbelplan.docx - Word", undefined],
+  [Activity.ReadWriteDocument, "Microsoft Word", "wyaehb", undefined],
+  [Activity.Email, "freemail", "", undefined],
+  [Activity.InstantMessaging, "Microsoft Teams", "Chat | <name> | <tenant> | <user> | Microsoft Teams", undefined],
+  [Activity.ReadWriteDocument, "PowerPoint", "AI_Augmented_Developer.pptx", undefined],
+  [Activity.FileManagement, "File Explorer", "electron - File Explorer", undefined],
+  [Activity.FileManagement, "Windows 资源管理器", "", "C:\\Windows\\explorer.exe"],
+  [Activity.ReadWriteDocument, "Vorschau", "_MG_5020.jpg", "/System/Applications/Preview.app"],
+  [Activity.Planning, "Erinnerungen", "Erinnerungen", "/System/Applications/Reminders.app"]
 ];
 
 test.each(cases)(
-  ".determineActivity(%p, %p, %p)",
-  function (
-    process: string | undefined,
-    windowTitle: string | undefined,
-    activity: Activity | string | undefined
-  ) {
-    expect(determineActivity(windowTitle, process)).toBe(activity);
+  ".determineActivity(%p, %p, %p, %p)",
+  function (activity, process, windowTitle, processPath) {
+    expect(determineActivity(windowTitle, process, processPath || undefined)).toBe(activity);
   }
 );

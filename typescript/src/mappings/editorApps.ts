@@ -10,6 +10,7 @@ const editorApps = [
   "gedit",
   "textpad",
   "axurepr9",
+  "bbedit"
 ];
 
 export default editorApps;

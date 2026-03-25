@@ -1,6 +1,7 @@
 export const process = [
   "finder",
   "explorer",
+  "file picker ui host",
   "speedcommander",
   "q-dir",
   "7zfm",
@@ -14,7 +15,7 @@ export const process = [
   "icloud",
   "searchui",
   "dropbox",
-  "box" // could have false positives with sandbox, mailbox
+  "box", // could have false positives with sandbox, mailbox
 ];
 
 // title keywords: only matched in browser context
