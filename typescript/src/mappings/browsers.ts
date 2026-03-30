@@ -3,6 +3,7 @@ const browsers = [
   "brave",
   "chrome",
   "chromium",
+  "dia",
   "edge",
   "firefox",
   "wavebox",
