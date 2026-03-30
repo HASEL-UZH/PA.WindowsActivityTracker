@@ -55,7 +55,10 @@ const cases: [Activity, string | undefined, string | undefined, string?][] = [
   [Activity.FileManagement, "File Explorer", "electron - File Explorer", undefined],
   [Activity.FileManagement, "Windows 资源管理器", "", "C:\\Windows\\explorer.exe"],
   [Activity.ReadWriteDocument, "Vorschau", "_MG_5020.jpg", "/System/Applications/Preview.app"],
-  [Activity.Planning, "Erinnerungen", "Erinnerungen", "/System/Applications/Reminders.app"]
+  [Activity.Planning, "Erinnerungen", "Erinnerungen", "/System/Applications/Reminders.app"],
+  [Activity.ReadWriteDocument, "RemNote", "", "C:\\Program Files\\RemNote\\RemNote.exe"],
+  [Activity.ReadWriteDocument, "Notion", "", "C:\\Users\\username\\AppData\\Local\\Programs\\Notion\\Notion.exe"],
+  [Activity.Planning, "Safari", "Google Kalender - Woche vom 27. Oktober 2025", undefined]
 ];
 
 test.each(cases)(
