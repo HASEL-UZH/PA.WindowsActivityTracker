@@ -17,6 +17,6 @@ export const title = [
   "posteingang",
   "postausgang",
   "inbox",
-  "imbox", // from hey
   "outbox",
+  "imbox", // from hey
 ];

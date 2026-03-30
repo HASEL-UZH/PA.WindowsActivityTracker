@@ -70,6 +70,7 @@ export const title = [
   "microsoft forms",
   "google forms", 
   "survey", // includes surveymonkey, surveyplanet
+  "umfrage",
   "jotform",
   "qualtrics",
   "mailchimp",
@@ -100,7 +101,6 @@ export const title = [
   "foto",
   "arxiv",
   "scholar",
+  "lecture",
   "vorlesung",
-  "übung",
-  "prüfung"
 ];

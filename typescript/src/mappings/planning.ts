@@ -25,6 +25,7 @@ export const process = [
 // title keywords: only matched in browser context
 export const title = [
   "backlog",
+  "kalender",
   "calendly",
   "hakuna",
   "clocker",
@@ -40,12 +41,16 @@ export const title = [
   "user story",
   "planner", // includes Microsoft Planner
   "project", // includes Microsoft Project
+  "projektplan",
   "todo",
   "task",
   "aufgabe",
+  "erinnerungen",
   "vorgangsliste",
   "work item",
+  "issue",
   "monday.com",
   "time tracking",
   "track time",
+  "zeiterfassung"
 ];
