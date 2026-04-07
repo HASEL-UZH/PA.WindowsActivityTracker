@@ -12,7 +12,7 @@ const isActivityByProcess = (
   activity: keyof typeof activityMappings,
   processIdentifier: string
 ): boolean => {
-  return activityMappings[activity].process.some((el) => processIdentifier.includes(el));
+  return activityMappings[activity].process.some((el: string) => processIdentifier.includes(el));
 };
 
 // Match a window title against an activity's title list AND process list.
@@ -25,8 +25,8 @@ const isActivityByTitle = (
   if (!windowTitle) return false;
   const mapping = activityMappings[activity];
   return (
-    mapping.title.some((el) => windowTitle.includes(el)) ||
-    mapping.process.some((el) => windowTitle.includes(el))
+    mapping.title.some((el: string) => windowTitle.includes(el)) ||
+    mapping.process.some((el: string) => windowTitle.includes(el))
   );
 };
 
