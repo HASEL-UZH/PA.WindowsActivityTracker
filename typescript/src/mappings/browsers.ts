@@ -3,6 +3,7 @@ const browsers = [
   "brave",
   "chrome",
   "chromium",
+  "dia",
   "edge",
   "firefox",
   "wavebox",
@@ -11,7 +12,10 @@ const browsers = [
   "opera",
   "safari",
   "tor",
-  "vivaldi"
+  "vivaldi",
+  "ecosia", // more of a search engine, but also has apps to browse the web
+  "duckduckgo",  // more of a search engine, but also has apps to browser the web
+  "avg_web_browser"
 ];
 
 export default browsers;

@@ -7,6 +7,7 @@ const codeFiles = [
   ".ts",
   ".err",
   ".sql",
+  ".ipynb",
   ".ksh",
   ".dat",
   ".xaml",
