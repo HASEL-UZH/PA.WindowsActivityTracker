@@ -131,6 +131,9 @@ export default function determineActivity(
       else if (isActivityByTitle(Activity.DevVc, windowTitle))             return Activity.DevVc;
       else if (isActivityByTitle(Activity.DevDebug, windowTitle))          return Activity.DevDebug;
       else if (isCodeFile(windowTitle))                                    return Activity.DevCode;
+      else if (isActivityByTitle(Activity.ReadWriteDocument, windowTitle)) return Activity.ReadWriteDocument;
+      else if (isActivityByTitle(Activity.Design, windowTitle))            return Activity.Design;
+      else if (isActivityByTitle(Activity.FileManagement, windowTitle))    return Activity.FileManagement;
       else if (isWebsiteWorkRelated(windowTitle))                          return Activity.WorkRelatedBrowsing;
       else if (isWebsiteWorkUnrelated(windowTitle))                        return Activity.WorkUnrelatedBrowsing;
       else                                                                 return Activity.WorkRelatedBrowsing; // assume work related browsing as base case
