@@ -58,7 +58,8 @@ const cases: [Activity, string | undefined, string | undefined, string?][] = [
   [Activity.Planning, "Erinnerungen", "Erinnerungen", "/System/Applications/Reminders.app"],
   [Activity.ReadWriteDocument, "RemNote", "", "C:\\Program Files\\RemNote\\RemNote.exe"],
   [Activity.ReadWriteDocument, "Notion", "", "C:\\Users\\username\\AppData\\Local\\Programs\\Notion\\Notion.exe"],
-  [Activity.Planning, "Safari", "Google Kalender - Woche vom 27. Oktober 2025", undefined]
+  [Activity.Planning, "Safari", "Google Kalender - Woche vom 27. Oktober 2025", undefined],
+  [Activity.ReadWriteDocument, "Microsoft Edge", "AI-TRACE: Tracking Real-World AI Use from Computer Events - Online LaTeX Editor Overleaf and 3 more pages", "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"]
 ];
 
 test.each(cases)(
