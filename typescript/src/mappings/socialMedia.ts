@@ -14,8 +14,11 @@ export const process = [
   "mastodon",
   "vimeo",
   "twitch",
-  // "linkedin", // not included as mapped as WorkRelatedBrowsing
-  // "substack", // not included, as mapped as WorkRelatedBrowsing
+  "linkedin",
+  "substack",
+  "clubhouse",
+  "quora",
+  "bereal"
 ];
 
 // title keywords: only matched in browser context
