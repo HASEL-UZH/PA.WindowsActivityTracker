@@ -4,6 +4,8 @@ import determineActivity from "./determineActivity.js";
 import {determineWindowTitle} from "./determineWindowTitle.js";
 import {activeWindow} from "get-windows";
 
+const ACTIVE_WINDOW_TIMEOUT_MS = 5000;
+
 /**
  * This is a cross-platform tracker class that allows you to subscribe to active window changes. It does so by wrapping the 'active-win' library found at: https://www.npmjs.com/package/active-win
  * It should be noted that per default in case a window was active for less than 1 second, there is a possibility that the callback will not fire. If you need to have more precise window change events, consider lowering "checkingForWindowChangeInterval"
@@ -51,10 +53,15 @@ export class WindowsActivityTracker implements ITracker {
     const pollActiveWindow = () => {
       this.ref = setTimeout(async () => {
         try {
-          const res = await activeWindow({
-            accessibilityPermission: this.accessibilityPermission,
-            screenRecordingPermission: this.screenRecordingPermission,
-          });
+          const res = await Promise.race([
+            activeWindow({
+              accessibilityPermission: this.accessibilityPermission,
+              screenRecordingPermission: this.screenRecordingPermission,
+            }),
+            new Promise<never>((_, reject) =>
+              setTimeout(() => reject(new Error("activeWindow timed out")), ACTIVE_WINDOW_TIMEOUT_MS)
+            ),
+          ]);
           const window = {
             ts: new Date(),
             windowTitle: res?.title || undefined,
