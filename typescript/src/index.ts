@@ -12,6 +12,7 @@ export class WindowsActivityTracker implements ITracker {
   name = "Window Activity Monitor";
   isRunning = false;
   private ref: NodeJS.Timeout | undefined;
+  private _generation = 0;
 
   onWindowChange: (activeWind: ActiveWindow) => void;
   checkingForWindowChangeInterval: number;
@@ -44,6 +45,8 @@ export class WindowsActivityTracker implements ITracker {
       console.log(`${this.name} is already running!`);
       return;
     }
+
+    const gen = ++this._generation;
 
     const pollActiveWindow = () => {
       this.ref = setTimeout(async () => {
@@ -80,10 +83,9 @@ export class WindowsActivityTracker implements ITracker {
           console.error(error);
         }
 
-        // avoid race condition (don't spawn another process if stop() is called mid-loop)
-        // note: this doesn't prevent the race condition where stop() AND start() are both called mid-loop
-        // using a generation counter would prevent that additional condition
-        if (this.isRunning) {
+        // avoid race condition: don't reschedule if stop() was called, or if stop()+start() was
+        // called mid-loop (generation counter ensures the stale callback exits quietly)
+        if (this.isRunning && this._generation === gen) {
           pollActiveWindow();
         }
       }, this.checkingForWindowChangeInterval);
