@@ -45,7 +45,7 @@ export class WindowsActivityTracker implements ITracker {
       return;
     }
 
-    const loop = () => {
+    const pollActiveWindow = () => {
       this.ref = setTimeout(async () => {
         try {
           const res = await activeWindow({
@@ -84,13 +84,13 @@ export class WindowsActivityTracker implements ITracker {
         // note: this doesn't prevent the race condition where stop() AND start() are both called mid-loop
         // using a generation counter would prevent that additional condition
         if (this.isRunning) {
-          loop();
+          pollActiveWindow();
         }
       }, this.checkingForWindowChangeInterval);
     };
 
-    loop();
     this.isRunning = true;
+    pollActiveWindow();
   }
   stop(): void {
     if (this.ref) clearTimeout(this.ref);
