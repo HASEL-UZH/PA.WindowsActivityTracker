@@ -1,0 +1,136 @@
+diff --git a/node_modules/get-windows/build-tmp-napi-v9/Makefile b/node_modules/get-windows/build-tmp-napi-v9/Makefile
+index 363941c..8a01643 100644
+--- a/node_modules/get-windows/build-tmp-napi-v9/Makefile
++++ b/node_modules/get-windows/build-tmp-napi-v9/Makefile
+@@ -343,8 +343,8 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+ endif
+ 
+ quiet_cmd_regen_makefile = ACTION Regenerating $@
+-cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/home/node/.cache/node-gyp/24.16.0" "-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/home/node/.cache/node-gyp/24.16.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/build/config.gypi -I/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/home/node/.cache/node-gyp/24.16.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
+-Makefile: $(srcdir)/../../../../home/node/.cache/node-gyp/24.16.0/include/node/common.gypi $(srcdir)/../../../../usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi $(srcdir)/binding.gyp $(srcdir)/build/config.gypi
++cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/home/node/.cache/node-gyp/24.16.0" "-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/home/node/.cache/node-gyp/24.16.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/build/config.gypi -I/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/home/node/.cache/node-gyp/24.16.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
++Makefile: $(srcdir)/../../../../../../home/node/.cache/node-gyp/24.16.0/include/node/common.gypi $(srcdir)/../../../../../../usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi $(srcdir)/binding.gyp $(srcdir)/build/config.gypi
+ 	$(call do_cmd,regen_makefile)
+ 
+ # "all" is a concatenation of the "all" targets from all the included
+diff --git a/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d b/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d
+deleted file mode 100644
+index a3336ee..0000000
+--- a/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d
++++ /dev/null
+@@ -1 +0,0 @@
+-cmd_/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node := ln -f "Release/node-get-windows.node" "/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node" 2>/dev/null || (rm -rf "/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node" && cp -af "Release/node-get-windows.node" "/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node")
+diff --git a/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d b/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d
+new file mode 100644
+index 0000000..c7c59be
+--- /dev/null
++++ b/node_modules/get-windows/build-tmp-napi-v9/Release/.deps/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node.d
+@@ -0,0 +1 @@
++cmd_/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node := ln -f "Release/node-get-windows.node" "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node" 2>/dev/null || (rm -rf "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node" && cp -af "Release/node-get-windows.node" "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node")
+diff --git a/node_modules/get-windows/build-tmp-napi-v9/action_after_build.target.mk b/node_modules/get-windows/build-tmp-napi-v9/action_after_build.target.mk
+index 82fdeb2..fce0083 100644
+--- a/node_modules/get-windows/build-tmp-napi-v9/action_after_build.target.mk
++++ b/node_modules/get-windows/build-tmp-napi-v9/action_after_build.target.mk
+@@ -3,12 +3,12 @@
+ TOOLSET := target
+ TARGET := action_after_build
+ ### Generated for copy rule.
+-/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node: TOOLSET := $(TOOLSET)
+-/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node: $(builddir)/node-get-windows.node FORCE_DO_CMD
++/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node: TOOLSET := $(TOOLSET)
++/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node: $(builddir)/node-get-windows.node FORCE_DO_CMD
+ 	$(call do_cmd,copy)
+ 
+-all_deps += /tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node
+-binding_gyp_action_after_build_target_copies = /tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node
++all_deps += /workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node
++binding_gyp_action_after_build_target_copies = /workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node
+ 
+ ### Rules for final target.
+ # Build our special outputs first.
+diff --git a/node_modules/get-windows/build-tmp-napi-v9/config.gypi b/node_modules/get-windows/build-tmp-napi-v9/config.gypi
+index 018dee2..3a8b875 100644
+--- a/node_modules/get-windows/build-tmp-napi-v9/config.gypi
++++ b/node_modules/get-windows/build-tmp-napi-v9/config.gypi
+@@ -504,9 +504,9 @@
+     "python": "/usr/bin/python3",
+     "standalone_static_library": 1,
+     "fallback_to_build": "true",
+-    "module": "/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node",
++    "module": "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64/node-get-windows.node",
+     "module_name": "node-get-windows",
+-    "module_path": "/tmp/tmp-52836-iNv6FEKz9Wgg/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64",
++    "module_path": "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript/node_modules/get-windows/lib/binding/napi-9-linux-glibc-x64",
+     "napi_version": "10",
+     "node_abi_napi": "napi",
+     "node_napi_label": "napi-v9",
+@@ -517,9 +517,8 @@
+     "node_gyp": "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+     "cache": "/home/node/.npm",
+     "npm_version": "11.13.0",
+-    "local_prefix": "/tmp/tmp-52836-iNv6FEKz9Wgg",
++    "local_prefix": "/workspaces/Mirrored_Volume/PA.WindowsActivityTracker/typescript",
+     "userconfig": "/home/node/.npmrc",
+-    "force": "true",
+     "user_agent": "npm/11.13.0 node/v24.16.0 linux x64 workspaces/false"
+   },
+   "target_defaults": {
+diff --git a/node_modules/get-windows/index.d.ts b/node_modules/get-windows/index.d.ts
+index d746c0b..bc04630 100644
+--- a/node_modules/get-windows/index.d.ts
++++ b/node_modules/get-windows/index.d.ts
+@@ -16,6 +16,15 @@ export type Options = {
+ 	@default true
+ 	*/
+ 	readonly screenRecordingPermission: boolean;
++
++	/**
++	Set a timeout for the activeWindow function. _(macOS)_
++
++	Setting this to a postive nonzero value n will time out the activeWindow function after n milliseconds. If the timeout is triggered, an Error is thrown.
++
++	@default undefined (no timeout)
++	*/
++	readonly timeout?: number;
+ };
+ 
+ export type BaseOwner = {
+diff --git a/node_modules/get-windows/lib/macos.js b/node_modules/get-windows/lib/macos.js
+index 7110488..7d213d4 100644
+--- a/node_modules/get-windows/lib/macos.js
++++ b/node_modules/get-windows/lib/macos.js
+@@ -34,8 +34,16 @@ const getArguments = options => {
+ 	return arguments_;
+ };
+ 
++const getExecFileOptions = options => {
++	if (!options) {
++		return;
++	}
++
++	return {timeout: options.timeout ?? 0};
++};
++
+ export async function activeWindow(options) {
+-	const {stdout} = await execFile(binary, getArguments(options));
++	const {stdout} = await execFile(binary, getArguments(options), getExecFileOptions(options));
+ 	return parseMac(stdout);
+ }
+ 
+diff --git a/node_modules/get-windows/readme.md b/node_modules/get-windows/readme.md
+index 36736e3..6aa0e14 100644
+--- a/node_modules/get-windows/readme.md
++++ b/node_modules/get-windows/readme.md
+@@ -64,6 +64,12 @@ Default: `true`
+ 
+ Enable the screen recording permission check. Setting this to `false` will prevent the screen recording permission prompt on macOS versions 10.15 and newer. The `title` property in the result will always be set to an empty string.
+ 
++##### timeout **(macOS only)**
++Set a timeout for the activeWindow function. Setting this to a postive nonzero value n will time out the activeWindow function after n milliseconds. If the timeout is triggered, an Error is thrown.
++
++Type: `number`\
++Default: `undefined`
++
+ ### activeWindowSync(options?)
+ 
+ Get metadata about the active window synchronously.
