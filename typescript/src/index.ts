@@ -53,11 +53,12 @@ export class WindowsActivityTracker implements ITracker {
     const pollActiveWindow = () => {
       this.ref = setTimeout(async () => {
         try {
-          const res = await activeWindow({
+          const windowOptions = {
             accessibilityPermission: this.accessibilityPermission,
             screenRecordingPermission: this.screenRecordingPermission,
             timeout: ACTIVE_WINDOW_TIMEOUT_MS,
-          });
+          };
+          const res = await activeWindow(windowOptions);
           const window = {
             ts: new Date(),
             windowTitle: res?.title || undefined,
