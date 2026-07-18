@@ -16,7 +16,8 @@
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "test": "node --experimental-vm-modules node_modules/jest-cli/bin/jest.js --config jest.config.json",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "postinstall": "patch-package || true"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
@@ -26,6 +27,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "get-windows": "^9.3.0"
+    "get-windows": "^9.3.0",
+    "patch-package": "^8.0.1"
   }
 }

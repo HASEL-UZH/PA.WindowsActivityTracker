@@ -1,0 +1,59 @@
+diff --git a/node_modules/get-windows/index.d.ts b/node_modules/get-windows/index.d.ts
+index d746c0b..bc04630 100644
+--- a/node_modules/get-windows/index.d.ts
++++ b/node_modules/get-windows/index.d.ts
+@@ -16,6 +16,15 @@ export type Options = {
+ 	@default true
+ 	*/
+ 	readonly screenRecordingPermission: boolean;
++
++	/**
++	Set a timeout for the activeWindow function. _(macOS)_
++
++	Setting this to a postive nonzero value n will time out the activeWindow function after n milliseconds. If the timeout is triggered, an Error is thrown.
++
++	@default undefined (no timeout)
++	*/
++	readonly timeout?: number;
+ };
+ 
+ export type BaseOwner = {
+diff --git a/node_modules/get-windows/lib/macos.js b/node_modules/get-windows/lib/macos.js
+index 7110488..7d213d4 100644
+--- a/node_modules/get-windows/lib/macos.js
++++ b/node_modules/get-windows/lib/macos.js
+@@ -34,8 +34,16 @@ const getArguments = options => {
+ 	return arguments_;
+ };
+ 
++const getExecFileOptions = options => {
++	if (!options) {
++		return;
++	}
++
++	return {timeout: options.timeout ?? 0};
++};
++
+ export async function activeWindow(options) {
+-	const {stdout} = await execFile(binary, getArguments(options));
++	const {stdout} = await execFile(binary, getArguments(options), getExecFileOptions(options));
+ 	return parseMac(stdout);
+ }
+ 
+diff --git a/node_modules/get-windows/readme.md b/node_modules/get-windows/readme.md
+index 36736e3..6aa0e14 100644
+--- a/node_modules/get-windows/readme.md
++++ b/node_modules/get-windows/readme.md
+@@ -64,6 +64,12 @@ Default: `true`
+ 
+ Enable the screen recording permission check. Setting this to `false` will prevent the screen recording permission prompt on macOS versions 10.15 and newer. The `title` property in the result will always be set to an empty string.
+ 
++##### timeout **(macOS only)**
++Set a timeout for the activeWindow function. Setting this to a postive nonzero value n will time out the activeWindow function after n milliseconds. If the timeout is triggered, an Error is thrown.
++
++Type: `number`\
++Default: `undefined`
++
+ ### activeWindowSync(options?)
+ 
+ Get metadata about the active window synchronously.
