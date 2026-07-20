@@ -2,6 +2,7 @@ import ITracker from "./types/ITracker.js";
 import ActiveWindow from "./types/ActiveWindow.js";
 import determineActivity from "./determineActivity.js";
 import {determineWindowTitle} from "./determineWindowTitle.js";
+import {determineArtifactName} from "./determineArtifactName.js";
 import {activeWindow} from "get-windows";
 
 const ACTIVE_WINDOW_TIMEOUT_MS = 5000;
@@ -59,13 +60,15 @@ export class WindowsActivityTracker implements ITracker {
             timeout: ACTIVE_WINDOW_TIMEOUT_MS,
           };
           const res = await activeWindow(windowOptions);
+          const url = res?.platform === "macos" ? res.url : undefined;
           const window = {
             ts: new Date(),
             windowTitle: res?.title || undefined,
             process: res?.owner.name || undefined,
             processPath: res?.owner.path,
             processId: res?.owner.processId,
-            url: res?.platform === "macos" ? res.url : undefined,
+            url,
+            artifactName: determineArtifactName(res?.title, res?.owner.name, url),
           };
 
           // If there is no previous window in memory -> handle as a "change window" and trigger callback

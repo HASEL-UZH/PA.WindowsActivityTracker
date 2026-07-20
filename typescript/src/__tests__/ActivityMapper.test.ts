@@ -34,7 +34,7 @@ const cases: [Activity, string | undefined, string | undefined, string?][] = [
   [Activity.ReadWriteDocument, "confluence", "", undefined],
   [Activity.InstantMessaging, "messenger", "messenger", undefined],
   [Activity.InstantMessaging, "firefox", "messenger", undefined],
-  [Activity.WorkRelatedBrowsing, "firefox", "linkedin", undefined],
+  [Activity.SocialMedia, "firefox", "linkedin", undefined],
   [Activity.WorkRelatedBrowsing, "firefox", "", undefined],
   [Activity.SocialMedia, "firefox", "facebook", undefined],
   [Activity.FileManagement, "explorer", "", undefined],
