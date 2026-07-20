@@ -12,7 +12,8 @@ const ACTIVE_WINDOW_TIMEOUT_MS = 5000;
  * It should be noted that per default in case a window was active for less than 1 second, there is a possibility that the callback will not fire. If you need to have more precise window change events, consider lowering "checkingForWindowChangeInterval"
  */
 export class WindowsActivityTracker implements ITracker {
-  name = "Window Activity Monitor";
+  static readonly NAME = "Window Activity Monitor";
+  name = WindowsActivityTracker.NAME;
   isRunning = false;
   private ref: NodeJS.Timeout | undefined;
   private _generation = 0;
