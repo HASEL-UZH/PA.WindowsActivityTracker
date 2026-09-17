@@ -7,6 +7,9 @@
     "email": "dev@hasel.dev"
   },
   "type": "module",
+  "engines": {
+    "node": "^20.17.0 || >=22.9.0"
+  },
   "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -29,5 +32,10 @@
   "dependencies": {
     "get-windows": "^9.3.0",
     "patch-package": "^8.0.1"
+  },
+  "overrides": {
+    "@mapbox/node-pre-gyp": "2.0.3",
+    "node-gyp": "12.4.0",
+    "tar@>=7.0.0 <7.5.21": "7.5.21"
   }
 }
