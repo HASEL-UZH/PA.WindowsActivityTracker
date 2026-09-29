@@ -4,6 +4,8 @@ This tracker can be used to listen to active window changes on any platform (Mac
 
 ## How to use
 
+Use Node.js 20.17 or later in the 20.x line, or Node.js 22.9 or later, for the native build dependencies.
+
 Add this git repository to your project as a git submodule
 
 ```
